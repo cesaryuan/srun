@@ -220,6 +220,10 @@ impl SrunClient {
             }
         }
 
+        if self.detect_ip {
+            self.get_token()?;
+        }
+
         // this will detect ip from response if detect_ip
         self.get_token()?;
 
