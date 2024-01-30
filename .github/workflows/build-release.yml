@@ -125,6 +125,7 @@ jobs:
           toolchain: nightly
           default: true
           override: true
+          components: rustfmt, clippy, rust-src
 
       - name: Build release
         run: |
