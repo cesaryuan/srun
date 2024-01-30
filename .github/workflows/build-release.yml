@@ -96,7 +96,7 @@ jobs:
           target: ${{ matrix.target }}
           toolchain: nightly
           # default: true
-          # override: true
+          override: true
 
       - name: Build release
         shell: bash
@@ -131,6 +131,7 @@ jobs:
       - name: Build release
         run: |
           pwsh ./build/build-host-release.ps1
+          pwsh ./build/build-host-release.ps1 -f tls
 
       - name: Upload Github Assets
         uses: softprops/action-gh-release@v1
