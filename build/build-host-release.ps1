@@ -18,10 +18,10 @@ $TargetTriple = (rustc -Vv | Select-String -Pattern "host: (.*)" | ForEach-Objec
 Write-Host "Started building release for ${TargetTriple} ..."
 
 if ([string]::IsNullOrEmpty($Features)) {
-    cargo build -Z build-std=std,panic_abort -Z build-std-features=panic_immediate_abort --release --target $TargetTriple
+    cargo build --release --target $TargetTriple
 }
 else {
-    cargo build -Z build-std=std,panic_abort -Z build-std-features=panic_immediate_abort --release --target $TargetTriple --features "${Features}"
+    cargo build --release --target $TargetTriple --features "${Features}"
 }
 
 if (!$?) {

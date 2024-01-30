@@ -59,17 +59,13 @@ function build() {
     if [[ "${TARGET_FEATURES}" != "" ]]; then
         echo "* Building ${TARGET} package ${VERSION} with features \"${TARGET_FEATURES}\" ..."
 
-        cross build -Z build-std=std,panic_abort \
-                    -Z build-std-features=panic_immediate_abort \
-                    --target "${TARGET}" \
+        cross build --target "${TARGET}" \
                     --features "${TARGET_FEATURES}" \
                     --release
     else
         echo "* Building ${TARGET} package ${VERSION} ..."
 
-        cross build -Z build-std=std,panic_abort \
-                    -Z build-std-features=panic_immediate_abort \
-                    --target "${TARGET}" \
+        cross build --target "${TARGET}" \
                     --release
     fi
 
