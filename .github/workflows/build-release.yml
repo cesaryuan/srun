@@ -129,7 +129,6 @@ jobs:
 
       - name: Build release
         run: |
-          rustup component add rust-src --toolchain nightly-x86_64-pc-windows-msvc
           pwsh ./build/build-host-release.ps1
 
       - name: Upload Github Assets
