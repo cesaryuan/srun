@@ -32,7 +32,7 @@ $Version = (Select-String -Pattern '^version *= *"([^"]*)"$' -Path "${PSScriptRo
 $Version = $Version -replace '"'
 
 $PackageReleasePath = "${PSScriptRoot}\release"
-$PackageName = "srun-${Version}.${TargetTriple}.zip"
+$PackageName = "srun-${Version}.${TargetTriple}.${Features}.zip"
 $PackagePath = "${PackageReleasePath}\${PackageName}"
 
 Write-Host $Version
